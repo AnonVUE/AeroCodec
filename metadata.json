@@ -1,0 +1,6 @@
+{
+  "name": "Aero Video Encoder",
+  "description": "An elegant, offline-ready Windows Aero styled client-side video encoder supporting custom resolutions, bitrates, VP8/VP9/AV1 encoding, and batch processing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

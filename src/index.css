@@ -1,0 +1,177 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+  
+  --color-aero-blue: #00a2ed;
+  --color-aero-teal: #22d3ee;
+  --color-aero-border: rgba(255, 255, 255, 0.25);
+  --color-aero-glow: rgba(34, 211, 238, 0.4);
+}
+
+/* Sleek Interface Glass Styling (Colors, borders, shadows, backgrounds) */
+.aero-glass-light {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 
+    0 15px 35px 0 rgba(0, 43, 77, 0.35),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 15px 0 rgba(255, 255, 255, 0.05);
+}
+
+.aero-glass-dark {
+  background: rgba(0, 20, 40, 0.45);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 20px 50px 0 rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Glass reflection shine */
+.aero-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.aero-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewY(-6deg);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Sleek Button style matching Aero plus modern tech feel */
+.aero-button {
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.aero-button-aqua {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.aero-button-aqua:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(34, 211, 238, 0.5);
+  color: #ffffff;
+  box-shadow: 
+    0 0 15px rgba(34, 211, 238, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.aero-button-aqua:active {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Sleek Accent Button gradient (START ENCODE style) */
+.aero-button-gradient {
+  background: linear-gradient(135deg, #22d3ee 0%, #0284c7 100%);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+}
+
+.aero-button-gradient:hover {
+  background: linear-gradient(135deg, #67e8f9 0%, #0ea5e9 100%);
+  box-shadow: 0 12px 35px rgba(6, 182, 212, 0.45);
+  transform: translateY(-1px);
+}
+
+.aero-button-gradient:active {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+  transform: translateY(1px);
+}
+
+/* Danger / Close Close button red glass sleek */
+.aero-close-btn {
+  background: rgba(239, 68, 68, 0.25);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  transition: all 0.2s ease;
+}
+.aero-close-btn:hover {
+  background: rgba(239, 68, 68, 0.45);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.5);
+  border-color: rgba(239, 68, 68, 0.6);
+}
+
+/* Sleek Translucent Glowing Progress bar (Gradient from Cyan-400 to Blue-500) */
+.aero-progress-bar {
+  background: linear-gradient(
+    90deg, 
+    #22d3ee, 
+    #0ea5e9, 
+    #22d3ee
+  );
+  background-size: 200% 100%;
+  animation: aeroGlowPulse 2s infinite linear;
+}
+
+@keyframes aeroGlowPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Scrollbars for Sleek custom list/dropdown boxes */
+.aero-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.aero-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 99px;
+  border: 2px solid transparent;
+}
+
+.aero-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.4);
+}
+
+.aero-scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Sleek Royal Deep Blue background gradient sweep */
+.aero-aurora-bg {
+  background: radial-gradient(circle at 0% 0%, #005a9e 0%, #002b4d 100%);
+  background-size: cover;
+}
+
+.aero-aurora-bg-dark {
+  background: radial-gradient(circle at 0% 0%, #00335c 0%, #051324 100%);
+  background-size: cover;
+}
